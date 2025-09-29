@@ -1,51 +1,24 @@
-🛠️ Microsoft TSS (Troubleshooting Script/Session)
-¿Qué es TSS?
-TSS (Troubleshooting Script/Session) es una herramienta fundamental de diagnóstico de Microsoft utilizada por los ingenieros de soporte para la recopilación automatizada de datos (logs, trazas de red, información del sistema) necesarios para resolver problemas complejos.
+# Microsoft TSS (Troubleshooting Script Set)
 
-Aunque su uso más conocido es en la depuración de aplicaciones como Microsoft Teams y Skype for Business, la filosofía del TSS se extiende a varios productos de Microsoft que requieren una visión profunda del estado del sistema en el momento en que ocurre un fallo o un comportamiento anómalo.
+## 📌 Introducción
+**TSS (Troubleshooting Script Set)** es una herramienta oficial de Microsoft que reúne un conjunto de scripts diseñados para recopilar información de diagnóstico de forma estandarizada en **Windows** y **Azure**.  
+Se utiliza principalmente para ayudar en la resolución de problemas de soporte técnico, ya que automatiza la recolección de **logs, configuraciones y datos del sistema**.
 
-🎯 Propósito y Beneficios
-El objetivo principal de TSS es asegurar que el soporte técnico reciba un conjunto de datos completo y preciso sin requerir que el usuario realice manualmente múltiples pasos de registro.
+---
 
-Característica
+## ⚙️ Características principales
+- 📄 **Recolección de logs** del sistema, eventos y configuraciones.  
+- 🛠️ Compatible con **Windows Server y Windows Client**.  
+- ☁️ Soporte para escenarios **on-premises** y **Azure**.  
+- ⏱️ Ahorra tiempo al centralizar la recopilación de información para el soporte de Microsoft.  
+- 🔒 Diseñado con foco en **seguridad y privacidad**: recolecta solo la información necesaria.
 
-Descripción
+---
 
-Recolección Centralizada
+## 🚀 Instalación y uso
+1. Descargar el paquete desde el [repositorio oficial de Microsoft](https://learn.microsoft.com/en-us/troubleshoot/windows-client/windows-client-others/tss).  
+2. Ejecutar **PowerShell como administrador**.  
+3. Importar y lanzar el script:  
 
-Consolida varios tipos de registros y datos en un único archivo comprimido.
-
-Precisión Temporal
-
-Captura la actividad del sistema exactamente durante el período de la reproducción del problema.
-
-Trazas de Red Detalladas
-
-Incluye datos de red (como ETL, Netsh, o Wireshark logs) cruciales para problemas de conectividad o rendimiento.
-
-Datos de Sistema
-
-Recopila automáticamente detalles de configuración del sistema operativo, versiones de software y hardware relevante.
-
-⚙️ Uso Básico (Flujo de Trabajo)
-La herramienta TSS generalmente se ejecuta siguiendo estos pasos:
-
-Inicio del Script: Un ingeniero de soporte de Microsoft proporciona un script (a menudo un archivo PowerShell o un ejecutable) configurado específicamente para el problema en cuestión.
-
-Reproducción: El usuario inicia la herramienta TSS y luego inmediatamente reproduce el problema que está experimentando (por ejemplo, iniciar una llamada que falla o un error de aplicación).
-
-Captura de Datos: Mientras el problema se reproduce, TSS registra la actividad del sistema, la red y la aplicación.
-
-Finalización y Compresión: Una vez finalizada la reproducción, el usuario detiene la captura. TSS automáticamente comprime todos los logs y trazas generadas en un paquete .zip o .cab listo para ser enviado a Microsoft.
-
-⚠️ Nota Importante sobre Privacidad
-Dado que TSS recopila información detallada del sistema y trazas de red, es esencial:
-
-Ejecutarlo solo bajo la guía del soporte técnico de Microsoft.
-
-Asegurarse de comprender qué datos se están recopilando antes de iniciar la sesión.
-
-Eliminar el paquete de logs una vez que el problema haya sido resuelto, para proteger la información del sistema.
-
-💡 Tip:
-Si estás documentando un procedimiento de soporte, siempre incluye la versión específica de TSS utilizada, ya que la herramienta recibe actualizaciones continuas.
+```powershell
+.\tss.ps1
